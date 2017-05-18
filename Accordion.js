@@ -76,7 +76,7 @@ class Accordion extends Component {
     return (
       <View {...viewProps}>
       {this.props.sections.map((section, key) => (
-        <View key={key}>
+        <View key={key} ref={`section-${key}`}>
           <TouchableHighlight onPress={() => this._toggleSection(key)} underlayColor={this.props.underlayColor}>
             {this.props.renderHeader(section, key, this.state.activeSection === key)}
           </TouchableHighlight>
